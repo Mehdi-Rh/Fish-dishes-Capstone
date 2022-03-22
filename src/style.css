@@ -75,16 +75,24 @@ header {
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  background-color: white;
+  display: block;
+  padding: 3rem 2rem;
+  width: 100%
 }
 
-footer  {
-  margin: 0 20px 20px;
-  color: black;
-  font-size: 20px;
-  padding: 1rem;
-  padding-left: 2rem;
-  border: 2px solid black;
-  font-weight: bold;
+footer .wrapper.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer .branding {
+  color: var(--black);
+  font-family: var(--sans-font);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1em;
+  flex-shrink: 0;
+  flex-basis: 7rem;
 }
