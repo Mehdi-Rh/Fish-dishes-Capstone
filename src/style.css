@@ -32,27 +32,43 @@ header {
   margin: 2rem 5%;
 }
 
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  align-content: center;
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--black);
+}
+
+.logo span {
+  color: var(--choco);
+}
+
 .nav-menu {
-  position: fixed;
-  left: -120%;
+  position: static;
+  left: 0;
   top: 0;
-  gap: 0;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  gap: 3rem;
+  display: flex;
+  flex-direction: row;
+  width: auto;
   text-align: center;
-  z-index: 1;
-  opacity: 0.9;
+}
+
+.nav-item {
+  display: -ms-grid;
+  display: grid;
+  align-content: center;
 }
 
 .nav-item a {
-  color: #fff;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 44px;
-  z-index: 2;
-  opacity: 10;
+  color: var(--black);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
 }
+
 
 
 /* Footer */
