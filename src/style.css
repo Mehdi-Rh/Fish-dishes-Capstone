@@ -1,7 +1,74 @@
-.hello {
-  color: blue;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
 }
 
 body {
-  background-color: bisque;
+  --black: #32485C;
+  --choco: #874E4C;
+  --nude: #E2B091;
+  --blush: #EABCAC;
+  --macaron: #F7DFD4;
+}
+
+/* HEADER */
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 5%;
+}
+
+.nav-menu {
+  position: fixed;
+  left: -120%;
+  top: 0;
+  gap: 0;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.nav-item a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  z-index: 2;
+  opacity: 10;
+}
+
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+footer  {
+  margin: 0 20px 20px;
+  color: black;
+  font-size: 20px;
+  padding: 1rem;
+  padding-left: 2rem;
+  border: 2px solid black;
+  font-weight: bold;
 }
