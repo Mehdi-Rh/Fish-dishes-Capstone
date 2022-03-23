@@ -7,13 +7,13 @@
     top: 10%;
     left: 20%;
     background-color: rgba(241, 238, 238, 0.9);
-    height: 100vh;
+    height: 90vh;
     width: 100vh;
     overflow-y: scroll;
     z-index: 2;
     border: transparent;
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 40px 0;
     box-shadow: 5px 10px rgba(190, 189, 183, 0.9);
 
   }

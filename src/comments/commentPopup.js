@@ -60,6 +60,7 @@ document.body.append(commentsPopup);
 
 closeButton.addEventListener('click', () => {
     commentsPopup.remove();
+    location.reload();
 })
 popupBtn.addEventListener('click', () => {
     commentsPopup.style.display = 'flex';
