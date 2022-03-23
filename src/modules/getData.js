@@ -29,6 +29,32 @@ export async function displayItems (mealContainer, url) {
   mealContainer.innerHTML = divMeal
 }
 
+// let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
+// const apiId = "t9up9m5T6uECqwieuC71"
+
+// const urlLike = urlStart + apiId + "/likes"
+
+// // async function addLikes(urlLike) {
+//   await fetch(urlLike, {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       name: 'My cool new game',
+//     }),
+//     headers: {
+//       'Content-type': 'application/json; charset=UTF-8',
+//       'Accept': 'application/json'
+
+//     },
+//   })
+//     .then((data) => {console.log(data)});
+// // }
+
+// start(urlStart)
+
+
+// async function getLikes(urlLike) {
+  
+// }
 
 
 
