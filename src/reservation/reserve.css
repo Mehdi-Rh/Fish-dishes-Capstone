@@ -81,8 +81,9 @@
 }
 
 form {
-    width: auto;
+    width: 70%;
     height: 180px;
+    margin: auto;
     padding: 0 40px;
     display: flex;
     flex-direction: column;
@@ -94,9 +95,18 @@ form h2 {
     text-align: center;
 }
 
-form #name, #startDate, #endDate, #reserveBtn{
-    width: 50%;
-    margin-bottom: 5px;
+form #startDate, #endDate, #name, #reserveBtn{
+    margin-bottom: 10px;
+    outline: none;
+}
+
+form #reserveBtn {
+    width: 100px;
+    height: 25px;
+    justify-self: center;
+    align-self: center;
+    border-radius: 30px;
+
 }
 
 
