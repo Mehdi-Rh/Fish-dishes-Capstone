@@ -21,3 +21,7 @@ reserveBtn.addEventListener('click', () => {
   count += 1;
   document.getElementById('counter').innerHTML = count;
 })
+
+const showPopup = document.querySelectorAll('#showReservationsPopup');
+showPopup.addEventListener('click', () => {
+})
