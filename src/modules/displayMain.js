@@ -1,6 +1,11 @@
+import {getData} from "./getData.js"
+
 export async function displayItems (mealContainer, url) {
   let divMeal = ''
-  let data = await gatData(url)
+
+  let data = await getData(url) // Copy this line to get your data 
+  
+  
   data.forEach((element) => {
     divMeal += `
     <div class="column">

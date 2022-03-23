@@ -1,3 +1,14 @@
+import {getData} from "../modules/getData.js"
+
+const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+
+let data = await getData(urlItems) // Copy this line to get your data 
+
+data = data[0]
+// Meal name: data.strMeal
+// Meal photo link: data.strMealThumb
+
+
 const popupBtn = document.getElementById('popupBtn');
 const commentsPopup = document.createElement('div');
 commentsPopup.setAttribute("id", "popup");
