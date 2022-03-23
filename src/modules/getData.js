@@ -1,13 +1,15 @@
+// getData function extract data from themealdb API
+// NB: always call this function using the await keyword and in a // async function
 async function gatData(url) {
   let data = await fetch(url)
   data = await data.json();
   return data.meals
 }
 
+
 export async function displayItems (mealContainer, url) {
   let divMeal = ''
   let data = await gatData(url)
-  console.log(gatData(url))
   data.forEach((element) => {
     divMeal += `
     <div class="column">
