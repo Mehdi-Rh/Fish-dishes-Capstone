@@ -2,18 +2,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 body {
-  --black: #32485C;
-  --choco: #874E4C;
-  --nude: #E2B091;
-  --blush: #EABCAC;
-  --macaron: #F7DFD4;
+  --sapphire: #001b48;
+  --cerulean: #004581;
+  --curious: #018abd;
+  --light: #97cbdc;
+  --azureish: #dde8f0;
 }
 
-/* HEADER */
+/* ******** HEADER ******** */
 a {
   text-decoration: none;
 }
@@ -23,6 +22,8 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
+  background : var(--azureish);
+
 }
 
 .navbar {
@@ -38,11 +39,11 @@ header {
   align-content: center;
   font-weight: 900;
   font-size: 3rem;
-  color: var(--black);
+  color: var(--sapphire);
 }
 
 .logo span {
-  color: var(--choco);
+  color: var(--cerulean);
 }
 
 .nav-menu {
@@ -63,21 +64,73 @@ header {
 }
 
 .nav-item a {
-  color: var(--black);
+  color: var(--sapphire);
   font-weight: 500;
   font-size: 24px;
   line-height: 20px;
 }
 
+/* ******** MAIN ******** */
+main {
+  margin-top: 7.4rem;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  box-sizing:border-box;
+  width: 33%;
+  padding: 0 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: var(--light);
+}
+
+.column img {
+  width: 100%
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;
+margin-bottom: 11rem;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
 
 
-/* Footer */
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+/* ******** FOOTER ******** */
 footer {
   position: fixed;
   bottom: 0;
   display: block;
   padding: 3rem 2rem;
-  width: 100%
+  width: 100%;
+  background : var(--azureish);
 }
 
 footer .wrapper.wrapper {
@@ -88,7 +141,7 @@ footer .wrapper.wrapper {
 }
 
 footer .branding {
-  color: var(--black);
+  color: var(--sapphire);
   font-family: var(--sans-font);
   font-weight: 800;
   font-size: 1.25rem;
