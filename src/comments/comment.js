@@ -1,4 +1,5 @@
 const commentsPopup = document.getElementById('popup');
+const popupBtn = document.getElementById('popupBtn');
 const headComments = document.createElement('div');
 headComments.classList.add('head-comments');
 
@@ -42,6 +43,8 @@ addComments.append(addTitle, form);
 commentsPopup.append(headComments, dataComments, addComments);
 
 closeButton.addEventListener('click', () => {
-    commentsPopup.style.display = 'none';
-
+    commentsPopup.remove();
+})
+popupBtn.addEventListener('click', () => {
+    commentsPopup.style.display = 'flex';
 })
