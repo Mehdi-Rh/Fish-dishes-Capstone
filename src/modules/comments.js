@@ -16,5 +16,5 @@ export async function addComment(urlComment, itemId,username,comment) {
 export async function getComment(urlComment,item1) {
   urlComment += `?item_id=${item1}`
   let data = await fetch(urlComment);
-   await data.json();
+  return await data.json();
 }

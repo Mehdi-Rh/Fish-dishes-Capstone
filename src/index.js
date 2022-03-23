@@ -12,4 +12,4 @@ const urlLike = urlStart + apiId + "/likes"
 let urlComment = urlStart + apiId + "/comments"
 const urlReservation = urlStart + apiId + "/reservations"
 
-displayItems(row, urlItems)
+displayItems(row, urlItems, urlLike)
