@@ -48,11 +48,11 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     margin-bottom: 50px;
   }
   
-  input[type='text'] {
+  input {
     width: 200px;
     padding: 8px;
     border: 2px solid black;
@@ -62,9 +62,13 @@
   textarea {
     width: 300px;
     height: 150px;
+    padding: 8px;
     border: 2px solid black;
     border-radius: 4px;
-    /* padding: 5px; */
+  }
+
+  textarea::placeholder {
+    font-weight: bold;
   }
 
   .form-btn {
@@ -74,7 +78,7 @@
       background-color: rgb(11, 129, 37);
       border: transparent;
       cursor: pointer;
-      align-self: flex-end;
+      align-self: flex-start;
       color: white;
       font-size: 18px;
   }
