@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/84967187a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./reserve.css">
+    <title>Popup</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-content">
+            <div class="image-container"></div>
+            <i class="fa fa-times" id="close-popup"></i>
+        </div>
+        <div class="name-space">
+            <h1>Space 3</h1>
+        </div>
+        <div class="popup-info">
+            <p>Fuel: titanium</p>
+            <p>Length: 100 000</p>
+            <p>Weight: 400</p>
+            <p>Power: 100 000 000</p>
+        </div>
+        <div class="reservations">
+            <h2>Reservations (2)</h2>
+
+        </div>
+            <form action="#" id="form">
+                <h2>Add a reservation</h2>
+                <input type="text" name="name" id="name" placeholder="Your name" required>
+                <input type="date" name="date" id="startDate" placeholder="Start date" required>
+                <input type="date" name="date" id="endDate" placeholder="Start date" required>
+                <button type="submit" id="reserveBtn"> Reserve</button>
+            </form>
+    </div>
+    <script src="./reserve.js"></script>
+</body>
+
+</html>
