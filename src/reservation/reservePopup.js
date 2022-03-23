@@ -1,6 +1,7 @@
-const popupWindow = document.querySelector('.container');
+const popupWindow = document.getElementById('container');
 
-const topContent = document.createElement('div');
+
+const topContent = document.createElement(div);
 topContent.className = 'top-content';
 popupWindow.appendChild(topContent);
 
@@ -71,29 +72,29 @@ const h2Form = document.createElement('h2');
 h2Form.innerText = 'Add a reservations';
 form.appendChild(h2Form);
 
-const input0 = document.createElement('input');
-input0.type = 'text';
-input0.name = 'name';
-input0.id = 'name';
-input0.placeholder = 'Your name';
-input0.required;
-form.appendChild(input0)
+const inputName = document.createElement('input');
+inputName.type = 'text';
+inputName.name = 'name';
+inputName.id = 'name';
+inputName.placeholder = 'Your name';
+inputName.required;
+form.appendChild(inputName)
 
-const input1 = document.createElement('input');
-input1.type = 'date';
-input1.name = 'date';
-input1.id = 'startDate';
-input1.placeholder = 'Start date';
-input1.required;
-form.appendChild(input1)
+const inputStartDate = document.createElement('input');
+inputStartDate.type = 'date';
+inputStartDate.name = 'date';
+inputStartDate.id = 'startDate';
+inputStartDate.placeholder = 'Start date';
+inputStartDate.required;
+form.appendChild(inputStartDate)
 
-const input2 = document.createElement('input');
-input2.type = 'date';
-input2.name = 'date';
-input2.id = 'endDate';
-input2.placeholder = 'End date';
-input2.required;
-form.appendChild(input2);
+const inputEndDate = document.createElement('input');
+inputEndDate.type = 'date';
+inputEndDate.name = 'date';
+inputEndDate.id = 'endDate';
+inputEndDate.placeholder = 'End date';
+inputEndDate.required;
+form.appendChild(inputEndDate);
 
 const submitBtn = document.createElement('button');
 submitBtn.id = 'reserveBtn';
@@ -123,5 +124,5 @@ closeBtn.addEventListener('click', () => {
 const reserveBtn1 = document.getElementById('reserveButton');
 
 reserveBtn1.addEventListener('click', () => {
-    popupWindow.style.display = 'flex';
+  popupWindow.style.display = 'flex';
 })
