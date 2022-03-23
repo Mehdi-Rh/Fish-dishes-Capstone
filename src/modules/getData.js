@@ -1,28 +1,32 @@
-const displayScore = (mealContainer, mealList) => {
+async function gatData(url) {
+  let data = await fetch(url)
+  data = await data.json();
+  return data.meals
+}
+
+export async function displayItems (mealContainer, url) {
   let divMeal = ''
-  Array.from(mealList).forEach((element) => {
+  let data = await gatData(url)
+  console.log(gatData(url))
+  data.forEach((element) => {
     divMeal += `
     <div class="column">
       <img src="${element.strMealThumb}" alt="Avatar"">
       <div class="container">
         <h4><b>${element.strMeal}</b></h4>
-        <div>
+        <div class="likeContainer">
           <span><i class="fas fa-heart"></i></span>
           <p>5 Likes</p>
         </div>
       </div>
-      <button id="comments" type="button">Comments</button>
-      <button id="reservations" type="button">Reservations</button>   
+      <button class="comments" type="button">Comments</button>
+      <button class="reservations" type="button">Reservations</button>   
     </div>
   `
   });
   mealContainer.innerHTML = divMeal
 }
 
-export async function gatData(url, mealContainer) {
-    let data = await fetch(url)
-    data = await data.json();
-    displayScore(mealContainer, data.meals)
-  }
+
 
 
