@@ -1,5 +1,11 @@
 * {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-color: var(--azureish);
+  --sapphire: #001b48;
+  --cerulean: #004581;
+  --curious: #018abd;
+  --light: #97cbdc;
+  --azureish: #dde8f0;
 }
 
 .container {
@@ -9,8 +15,32 @@
     /* display: none; */
     flex-direction: column;
     margin: auto;
-    border: 2px solid #000;
+    border: 2px solid var(--curious);
     border-radius: 10px;
+    box-shadow: 5px 3px 8px var(--curious);
+}
+
+#reserveButton {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 30px;
+    color: var(--sapphire);
+    border-radius: 30px;
+    border: 1px solid var(--cerulean);
+    outline: none;
+    cursor: pointer;
+    box-shadow: 5px 3px 3px var(--curious);
+}
+
+#reserveButton:hover {
+    background: var(--cerulean);
+    color: var(--azureish);
+}
+
+#reserveButton:active {
+    transform: translateY(2px);
 }
 
 .top-content {

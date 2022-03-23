@@ -119,6 +119,7 @@ reserveBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
   popupWindow.remove();
+  window.location.reload();
 });
 
 const reserveBtn1 = document.getElementById('reserveButton');
