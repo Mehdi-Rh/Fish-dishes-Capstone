@@ -1,20 +1,8 @@
 import _ from 'lodash';
 import './style.css';
+import {gatData} from './modules/getData.js'
 
- function component() {
-   const element = document.createElement('div');
-  const btn = document.createElement('button');
+const row = document.querySelector('.row')
+const url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
-
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-   return element;
- }
-
- document.body.appendChild(component());
+gatData(url, row)
