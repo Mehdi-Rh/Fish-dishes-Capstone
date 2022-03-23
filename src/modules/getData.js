@@ -2,12 +2,17 @@ const displayScore = (mealContainer, mealList) => {
   let divMeal = ''
   Array.from(mealList).forEach((element) => {
     divMeal += `
-    <div class="column card">
-      <img src="${element.strMealThumb}" alt="Avatar" style="width:100%">
+    <div class="column">
+      <img src="${element.strMealThumb}" alt="Avatar"">
       <div class="container">
         <h4><b>${element.strMeal}</b></h4>
-        <p>Architect & Engineer</p>
+        <div>
+          <span><i class="fas fa-heart"></i></span>
+          <p>5 Likes</p>
+        </div>
       </div>
+      <button id="comments" type="button">Comments</button>
+      <button id="reservations" type="button">Reservations</button>   
     </div>
   `
   });
