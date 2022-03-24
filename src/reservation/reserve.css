@@ -67,9 +67,13 @@
 .fa {
     position: absolute;
     right: 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
     color: var(--cerulean);
+}
+
+.fa:hover {
+    font-size: 1.4rem;
 }
 
 .name-space {
@@ -144,9 +148,10 @@ form .name, .startDate, .endDate {
 
 form #reserveBtn {
     width: 100px;
-    height: 25px;
+    height: 30px;
     justify-self: center;
     align-self: center;
+    cursor: pointer;
     border: 1px solid var(--curious);
     border-radius: 30px;
     box-shadow: 5px 3px 8px var(--curious);
