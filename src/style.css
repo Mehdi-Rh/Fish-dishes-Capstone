@@ -82,7 +82,7 @@ main {
   width: 33%;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  margin: 2px;
+  margin: 5%;
   border-radius: 8px;
   text-align: center;
   background-color: var(--light);
@@ -95,7 +95,7 @@ main {
 /* Remove extra left and right margins, due to padding in columns */
 .row {
   padding: 10px;
-  margin: 0 -5px;
+  margin: 0 5%;
   margin-bottom: 11rem;
 }
 
@@ -123,18 +123,10 @@ main {
   justify-content: space-evenly;
 }
 
-
-
-
-
 /* ******** FOOTER ******** */
 footer {
-  position: fixed;
-  bottom: 0;
   display: block;
   padding: 3rem 2rem;
-  width: 100%;
-  background : var(--azureish);
 }
 
 footer .wrapper.wrapper {
@@ -145,7 +137,7 @@ footer .wrapper.wrapper {
 }
 
 footer .branding {
-  color: var(--sapphire);
+  color: var(--primary);
   font-family: var(--sans-font);
   font-weight: 800;
   font-size: 1.25rem;

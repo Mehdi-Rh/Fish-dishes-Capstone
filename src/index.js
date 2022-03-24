@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import './style.css';
 import {displayItems} from './modules/displayMain.js'
+import {addLikes} from './modules/likes'
+
 
 const row = document.querySelector('.row')
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
@@ -12,4 +14,8 @@ const urlLike = urlStart + apiId + "/likes"
 let urlComment = urlStart + apiId + "/comments"
 const urlReservation = urlStart + apiId + "/reservations"
 
+/* Run functionnalities */
 displayItems(row, urlItems, urlLike)
+addLikes(urlLike, urlItems)
+
+
