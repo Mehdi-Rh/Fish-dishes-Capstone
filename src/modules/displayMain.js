@@ -10,7 +10,7 @@ export async function displayItems (mealContainer, url, urlLike) {
   
   data.forEach((element) => {
     let likeNumber = likeList.find( ({item_id}) => item_id === element.idMeal) 
-
+    // The line below it to prevent from item not integrated on the api
     likeNumber = (!!likeNumber ?  likeNumber.likes : 0)
 
     divMeal += `
