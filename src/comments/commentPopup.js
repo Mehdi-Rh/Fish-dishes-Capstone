@@ -68,7 +68,6 @@ document.body.append(commentsPopup);
 popupBtn.addEventListener('click', () => {
     commentsPopup.style.display = 'flex';
 })
-<<<<<<< Updated upstream
 
 const btn = document.getElementById('closeBtn')
 btn.addEventListener('click', () => {
@@ -98,9 +97,3 @@ formButton.addEventListener('click', (e) => {
   //     return data;
   //   }
 })
-=======
-headComments.innerHTML += `<div class='imgText'>
-    <img class='card-img' src=${e.strMealThumb}>
-    <p>${e.strMeal}</p>
-  </div>`;
->>>>>>> Stashed changes
