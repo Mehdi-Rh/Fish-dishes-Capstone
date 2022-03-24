@@ -1,3 +1,5 @@
+import { getData } from "../modules/getData.js";
+
 const popupWindow = document.querySelector('.container');
 const topContent = document.createElement('div');
 topContent.className = 'top-content';
@@ -11,14 +13,6 @@ const faTimes = document.createElement('i');
 faTimes.className = 'fa fa-times';
 faTimes.id = 'close-popup';
 topContent.appendChild(faTimes);
-
-const nameSpace = document.createElement('div');
-nameSpace.className = 'name-space';
-popupWindow.appendChild(nameSpace);
-
-const h1Element = document.createElement('h1');
-h1Element.innerText = 'Space 3';
-nameSpace.appendChild(h1Element);
 
 const popupInfo = document.createElement('div');
 popupInfo.className = 'popup-info';
@@ -73,7 +67,7 @@ form.appendChild(h2Form);
 const inputName = document.createElement('input');
 inputName.type = 'text';
 inputName.name = 'name';
-inputName.id = 'name';
+inputName.className = 'name';
 inputName.placeholder = 'Your name';
 inputName.required;
 form.appendChild(inputName)
@@ -81,7 +75,7 @@ form.appendChild(inputName)
 const inputStartDate = document.createElement('input');
 inputStartDate.type = 'date';
 inputStartDate.name = 'date';
-inputStartDate.id = 'startDate';
+inputStartDate.className = 'startDate';
 inputStartDate.placeholder = 'Start date';
 inputStartDate.required;
 form.appendChild(inputStartDate)
@@ -89,7 +83,7 @@ form.appendChild(inputStartDate)
 const inputEndDate = document.createElement('input');
 inputEndDate.type = 'date';
 inputEndDate.name = 'date';
-inputEndDate.id = 'endDate';
+inputEndDate.className = 'endDate';
 inputEndDate.placeholder = 'End date';
 inputEndDate.required;
 form.appendChild(inputEndDate);
@@ -123,3 +117,13 @@ const reserveBtn1 = document.querySelector('.reserveBtn');
 reserveBtn1.addEventListener('click', () => {
   popupWindow.style.display = 'flex';
 })
+
+const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+
+let data = await getData(urlItems)
+let get = data[0];
+
+const preview = document.querySelector('.image-container');
+ preview.innerHTML += `
+<img class='preview' src=${get.strMealThumb}></img><p>${get.strMeal}</p>
+`;
