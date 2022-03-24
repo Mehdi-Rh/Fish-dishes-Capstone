@@ -1,7 +1,5 @@
-const popupWindow = document.getElementById('container');
-
-
-const topContent = document.createElement(div);
+const popupWindow = document.querySelector('.container');
+const topContent = document.createElement('div');
 topContent.className = 'top-content';
 popupWindow.appendChild(topContent);
 
@@ -98,14 +96,12 @@ form.appendChild(inputEndDate);
 
 const submitBtn = document.createElement('button');
 submitBtn.id = 'reserveBtn';
-submitBtn.value = 'Reserve';
+submitBtn.innerText = 'Reservations';
 form.appendChild(submitBtn);
 
-
-const closeBtn = document.createElement('close-popup');
+const closeBtn = document.getElementById('close-popup');
 const reserveBtn = document.getElementById('reserveBtn');
 const reserveContainer = document.querySelector('.reservations');
-const form = document.getElementById('form');
 
 const reservationsBox = document.createElement('ul');
 reservationsBox.className = 'reservations-box';
@@ -122,7 +118,7 @@ closeBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-const reserveBtn1 = document.getElementById('reserveButton');
+const reserveBtn1 = document.querySelector('.reserveBtn');
 
 reserveBtn1.addEventListener('click', () => {
   popupWindow.style.display = 'flex';

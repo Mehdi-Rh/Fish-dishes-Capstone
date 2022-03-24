@@ -12,7 +12,7 @@
     position: relative;
     width: 40%;
     height: 95vh;
-    /* display: none; */
+    display: none;
     flex-direction: column;
     margin: auto;
     border: 2px solid var(--curious);
