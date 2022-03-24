@@ -10,6 +10,7 @@ body {
   --curious: #018abd;
   --light: #97cbdc;
   --azureish: #dde8f0;
+  overflow-x: hidden;
 }
 
 /* ******** HEADER ******** */

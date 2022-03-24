@@ -16,7 +16,18 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getData.js */ \"./src/modules/getData.js\");\n\n\n\nconst row = document.querySelector('.row');\nconst url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';\n(0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_2__.displayItems)(row, url);\n\n//# sourceURL=webpack://todolist2/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_displayMain_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/displayMain.js */ \"./src/modules/displayMain.js\");\n\n\n\nconst row = document.querySelector('.row');\nconst urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';\n/* Generate urls of the involvment API */\n\nlet urlStart = \"https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/\";\nconst apiId = \"t9up9m5T6uECqwieuC71\";\nconst urlLike = urlStart + apiId + \"/likes\";\nlet urlComment = urlStart + apiId + \"/comments\";\nconst urlReservation = urlStart + apiId + \"/reservations\";\n(0,_modules_displayMain_js__WEBPACK_IMPORTED_MODULE_2__.displayItems)(row, urlItems, urlLike);\n\n//# sourceURL=webpack://todolist2/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/displayMain.js":
+/*!************************************!*\
+  !*** ./src/modules/displayMain.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayItems\": () => (/* binding */ displayItems)\n/* harmony export */ });\n/* harmony import */ var _getData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData.js */ \"./src/modules/getData.js\");\n/* harmony import */ var _likes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./likes.js */ \"./src/modules/likes.js\");\n\n\nasync function displayItems(mealContainer, url, urlLike) {\n  let divMeal = '';\n  let likes = await (0,_likes_js__WEBPACK_IMPORTED_MODULE_1__.getLikes)(urlLike);\n  let data = await (0,_getData_js__WEBPACK_IMPORTED_MODULE_0__.getData)(url); // Copy this line to get your data \n\n  data.forEach(element => {\n    const likeNumber = likes.find(x => x.item_id === element.idMeal);\n    divMeal += `\n    <div class=\"column\">\n      <img src=\"${element.strMealThumb}\" alt=\"Avatar\"\">\n      <div class=\"container\">\n        <h4><b>${element.strMeal}</b></h4>\n        <div class=\"likeContainer\">\n          <span><i class=\"fas fa-heart\"></i></span>\n          <p>${likeNumber || 0} Likes</p>\n        </div>\n      </div>\n      <button class=\"comments\" type=\"button\">Comments</button>\n      <button class=\"reservations\" type=\"button\">Reservations</button>   \n    </div>\n  `;\n  });\n  mealContainer.innerHTML = divMeal;\n}\n\n//# sourceURL=webpack://todolist2/./src/modules/displayMain.js?");
 
 /***/ }),
 
@@ -27,7 +38,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayItems\": () => (/* binding */ displayItems)\n/* harmony export */ });\n// getData function extract data from themealdb API\n// NB: always call this function using the await keyword and in a // async function\nasync function gatData(url) {\n  let data = await fetch(url);\n  data = await data.json();\n  return data.meals;\n}\n\nasync function displayItems(mealContainer, url) {\n  let divMeal = '';\n  let data = await gatData(url);\n  data.forEach(element => {\n    divMeal += `\n    <div class=\"column\">\n      <img src=\"${element.strMealThumb}\" alt=\"Avatar\"\">\n      <div class=\"container\">\n        <h4><b>${element.strMeal}</b></h4>\n        <div class=\"likeContainer\">\n          <span><i class=\"fas fa-heart\"></i></span>\n          <p>5 Likes</p>\n        </div>\n      </div>\n      <button class=\"comments\" type=\"button\">Comments</button>\n      <button class=\"reservations\" id=\"showReservationsPopup\" type=\"button\">Reservations</button>   \n    </div>\n  `;\n  });\n  mealContainer.innerHTML = divMeal;\n}\n\n//# sourceURL=webpack://todolist2/./src/modules/getData.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getData\": () => (/* binding */ getData)\n/* harmony export */ });\n// getData function extract data from themealdb API\n// NB: always call this function using the await keyword and in a // async function\nasync function getData(url) {\n  let data = await fetch(url);\n  data = await data.json();\n  return data.meals;\n}\n\n//# sourceURL=webpack://todolist2/./src/modules/getData.js?");
+
+/***/ }),
+
+/***/ "./src/modules/likes.js":
+/*!******************************!*\
+  !*** ./src/modules/likes.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addLikes\": () => (/* binding */ addLikes),\n/* harmony export */   \"getLikes\": () => (/* binding */ getLikes)\n/* harmony export */ });\nasync function addLikes(urlLike, itemId) {\n  await fetch(urlLike, {\n    method: 'POST',\n    body: JSON.stringify({\n      \"item_id\": itemId\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n      'Accept': 'application/json'\n    }\n  }).then(data => {\n    console.log(data);\n  });\n}\nasync function getLikes(urlLike) {\n  let data = await fetch(urlLike);\n  return await data.json();\n}\n\n//# sourceURL=webpack://todolist2/./src/modules/likes.js?");
 
 /***/ }),
 

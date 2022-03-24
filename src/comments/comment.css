@@ -31,13 +31,22 @@
   }
   .head-comments {
       display: flex;
-      justify-content: flex-end;
+      flex-direction: row-reverse;
+      justify-content: space-between;
       align-items: center;
+      gap: 48px;
+      /* padding-top: 20px; */
   }
 
-  .close-btn {
-      font-size: 48px;
-      border: transparent;
+  .card-img {
+    width: 400px;
+    border-radius: 5px;
+  }
+
+  .fa {
+      font-size: 36px;
+      align-self: flex-end;
+      margin: 30px;
   }
   
   .data {
