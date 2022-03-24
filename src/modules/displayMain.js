@@ -5,10 +5,7 @@ import {getLikes} from "./likes.js"
 export async function displayItems (mealContainer, url, urlLike) {
   let divMeal = ''
   let likes = await getLikes(urlLike)
-  console.log(likes)
-
   let data = await getData(url) // Copy this line to get your data 
-  console.log(data[0])
 
   
   data.forEach((element) => {

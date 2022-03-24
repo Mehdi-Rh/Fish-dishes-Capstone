@@ -1,14 +1,24 @@
 import {getData} from "../modules/getData.js"
+import {addComment, getComment} from "../modules/comments.js"
 
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
 let data = await getData(urlItems) // Copy this line to get your data 
-console.log(data[0]);
+console.log(data[1]);
 
 let e = data[0]
 // Meal name: data.strMeal
 // Meal photo link: data.strMealThumb
 
+/* Generate urls of the involvment API */ 
+let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
+const apiId = "t9up9m5T6uECqwieuC71"
+const urlLike = urlStart + apiId + "/likes"
+let urlComment = urlStart + apiId + "/comments"
+/* ***********  */
+
+// addComment(urlComment, e.item_id,username,comment)
+// const comments = getComment(urlComment, e.item_id)
 
 const popupBtn = document.getElementById('popupBtn');
 const commentsPopup = document.createElement('div');
