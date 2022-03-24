@@ -1,5 +1,5 @@
 import {getData} from "../modules/getData.js"
-import {addComment, getComment} from "../modules/comments.js"
+// import {addComment, getComment} from "../modules/comments.js"
 
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
@@ -11,10 +11,10 @@ let e = data[0]
 // Meal photo link: data.strMealThumb
 
 /* Generate urls of the involvment API */ 
-let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
-const apiId = "t9up9m5T6uECqwieuC71"
-const urlLike = urlStart + apiId + "/likes"
-let urlComment = urlStart + apiId + "/comments"
+// let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
+// const apiId = "t9up9m5T6uECqwieuC71"
+// const urlLike = urlStart + apiId + "/likes"
+// let urlComment = urlStart + apiId + "/comments"
 /* ***********  */
 
 // addComment(urlComment, e.item_id,username,comment)
@@ -28,17 +28,12 @@ commentsPopup.setAttribute("class", "container");
 const headComments = document.createElement('div');
 headComments.classList.add('head-comments');
 
-const closeButton = document.createElement('button');
-closeButton.setAttribute("type" ,"submit");
-closeButton.classList.add('close-btn');
-closeButton.innerHTML = '&times;';
-headComments.appendChild(closeButton);
-
+const closeButton = document.createElement('i');
+closeButton.className = 'fa fa-times';
+closeButton.id = 'closeBtn'
 
 const dataComments = document.createElement('div');
 dataComments.classList.add('data');
-dataComments.innerHTML = `
-<p></p>`
 
 const addComments = document.createElement('div');
 addComments.classList.add('add-comments');
@@ -66,20 +61,39 @@ form.append(inputField, textArea, formButton);
 
 addComments.append(addTitle, form);
 
-commentsPopup.append(headComments, dataComments, addComments);
+commentsPopup.append(closeButton, headComments, dataComments, addComments, );
 
 document.body.append(commentsPopup);
 
-closeButton.addEventListener('click', () => {
-    commentsPopup.remove();
-    location.reload();
-})
 popupBtn.addEventListener('click', () => {
     commentsPopup.style.display = 'flex';
 })
 
+const btn = document.getElementById('closeBtn')
+btn.addEventListener('click', () => {
+    commentsPopup.remove();
+    location.reload();
+})
 
-    headComments.innerHTML += `<div class='imgText'>
-    <img class='card-img' src=${e.strMealThumb}>
-    <p>${e.strMeal}</p>
-  </div>`;
+headComments.innerHTML += `<div class='imgText'>
+<img class='card-img' src=${e.strMealThumb}>
+<p>${e.strMeal}</p>
+</div>`;
+
+
+formButton.addEventListener('click', (e) => {
+  // addComment = async (itemID, userName, userComment) => {
+  //     await fetch(`${this.baseurl}${this.dbInstance}/comments`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ item_id: itemID, username: userName, comment: userComment }),
+  //     });
+  //   }
+  
+  //   getComments = async (itemID) => {
+  //     const data = await fetch(`${this.baseurl}${this.dbInstance}/comments?item_id=${itemID}`, { method: 'GET' });
+  //     return data;
+  //   }
+})
