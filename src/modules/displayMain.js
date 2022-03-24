@@ -11,7 +11,7 @@ export async function displayItems (mealContainer, url, urlLike) {
   data.forEach((element) => {
     const likeNumber = likes.find(x => x.item_id === element.idMeal)
     divMeal += `
-    <div class="column">
+    <div class="column" id="${element.idMeal}">
       <img src="${element.strMealThumb}" alt="Avatar"">
       <div class="container">
         <h4><b>${element.strMeal}</b></h4>

@@ -1,5 +1,5 @@
 import {getData} from "../modules/getData.js"
-// import {addComment, getComment} from "../modules/comments.js"
+import {addComment, getComment} from "../modules/comments.js"
 
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
@@ -7,18 +7,6 @@ let data = await getData(urlItems) // Copy this line to get your data
 console.log(data[1]);
 
 let e = data[0]
-// Meal name: data.strMeal
-// Meal photo link: data.strMealThumb
-
-/* Generate urls of the involvment API */ 
-// let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
-// const apiId = "t9up9m5T6uECqwieuC71"
-// const urlLike = urlStart + apiId + "/likes"
-// let urlComment = urlStart + apiId + "/comments"
-/* ***********  */
-
-// addComment(urlComment, e.item_id,username,comment)
-// const comments = getComment(urlComment, e.item_id)
 
 const popupBtn = document.getElementById('popupBtn');
 const commentsPopup = document.createElement('div');
@@ -75,25 +63,29 @@ btn.addEventListener('click', () => {
     location.reload();
 })
 
-headComments.innerHTML += `<div class='imgText'>
+headComments.innerHTML += `<div class='imgText' id=${e.idMeal}>
 <img class='card-img' src=${e.strMealThumb}>
 <p>${e.strMeal}</p>
 </div>`;
 
 
 formButton.addEventListener('click', (e) => {
-  // addComment = async (itemID, userName, userComment) => {
-  //     await fetch(`${this.baseurl}${this.dbInstance}/comments`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ item_id: itemID, username: userName, comment: userComment }),
-  //     });
-  //   }
+  e.preventDefault();
+  addComment('mango','galaxy','hello');
   
-  //   getComments = async (itemID) => {
-  //     const data = await fetch(`${this.baseurl}${this.dbInstance}/comments?item_id=${itemID}`, { method: 'GET' });
-  //     return data;
-  //   }
+})
+
+document.addEventListener('click', (event) => {
+  if (event.target && event.target.classList.contains('popup-btn')) {
+    const comments = getComment('mango');
+    document.querySelector('.data').innerHTML = '';
+    comments.then(data => {
+      data.forEach(newData => {
+        const comment = `<div>${newData.creation_date} ${newData.username} ${newData.comment}</div>`
+        document.querySelector('.data').innerHTML += comment;
+      });
+    });
+
+
+  }
 })
