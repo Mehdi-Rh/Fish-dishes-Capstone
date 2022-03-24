@@ -57,6 +57,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
+👤 **Stanley SIMEON**
+
+- GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
+- Twitter [@mstanleyme](https://twitter.com/mstanleyme)
+- LinkedIn [LinkedIn](https://www.linkedin.com/in/stanley-simeon-881091224/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
