@@ -3,8 +3,9 @@ import {getData} from "../modules/getData.js"
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
 let data = await getData(urlItems) // Copy this line to get your data 
+console.log(data[0]);
 
-data = data[0]
+let e = data[0]
 // Meal name: data.strMeal
 // Meal photo link: data.strMealThumb
 
@@ -22,6 +23,7 @@ closeButton.setAttribute("type" ,"submit");
 closeButton.classList.add('close-btn');
 closeButton.innerHTML = '&times;';
 headComments.appendChild(closeButton);
+
 
 const dataComments = document.createElement('div');
 dataComments.classList.add('data');
@@ -65,3 +67,9 @@ closeButton.addEventListener('click', () => {
 popupBtn.addEventListener('click', () => {
     commentsPopup.style.display = 'flex';
 })
+
+
+    headComments.innerHTML += `<div class='imgText'>
+    <img class='card-img' src=${e.strMealThumb}>
+    <p>${e.strMeal}</p>
+  </div>`;
