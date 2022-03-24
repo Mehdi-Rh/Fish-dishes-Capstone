@@ -14,7 +14,7 @@ export async function displayItems (mealContainer, url, urlLike) {
     likeNumber = (!!likeNumber ?  likeNumber.likes : 0)
 
     divMeal += `
-    <div class="column">
+    <div class="column" id="${element.idMeal}">
       <img src="${element.strMealThumb}" alt="Avatar"">
       <div class="container">
         <h4><b>${element.strMeal}</b></h4>
