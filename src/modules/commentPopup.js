@@ -43,7 +43,7 @@ const setPopup = (title, image, description = '') => {
 
   addComments.append(addTitle, form);
 
-  commentsPopup.append(headComments, dataComments, addComments, closeButton );
+  commentsPopup.append(closeButton, headComments, dataComments, addComments, );
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';
@@ -70,8 +70,27 @@ const displayPopup = () => {
        const image = card.querySelector('.meal-image').src;
        const id = event.target.parentElement.id;
        setPopup(title, image);
-      const comments = getComment(id) || [] ;
-      console.log(comments)
+      getComment(id)
+      .then(response => {
+        if (response.length){
+          // Use this block of code to create your box
+
+          response.forEach(element => {
+          console.log(element.creation_date)
+          console.log(element.comment)
+          console.log(element.username)
+          // element.creation_date
+          // element.comment
+          // element.username   
+          });
+     
+      }
+    })
+
+
+
+      
+      
       document.querySelector('.data').innerHTML = '';  
 
 
