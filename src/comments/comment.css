@@ -4,7 +4,7 @@
     /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 20%;
     transform: translate(-20%, 10%);
