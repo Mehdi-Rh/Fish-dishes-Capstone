@@ -1,19 +1,22 @@
 .container {
     display: none;
-    flex-direction: column;
+    grid-template-columns: auto auto auto;
+    /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
     top: 10%;
     left: 20%;
+    transform: translate(-20%, 10%);
     background-color: rgba(241, 238, 238, 0.9);
-    height: 90vh;
-    width: 100vh;
-    overflow-y: scroll;
+    height: 60%;
+    width: 90%;
+    /* overflow-y: scroll; */
     z-index: 2;
     border: transparent;
     border-radius: 10px;
     margin-top: 40px 0;
+    gap: 26px;
     box-shadow: 5px 10px rgba(190, 189, 183, 0.9);
 
   }
@@ -45,7 +48,7 @@
 
   .fa {
       font-size: 36px;
-      align-self: flex-end;
+      align-self: flex-start;
       margin: 30px;
   }
   
