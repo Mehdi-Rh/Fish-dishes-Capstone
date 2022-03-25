@@ -21,53 +21,26 @@ const urlReservation = urlStart + apiId + "/reservations"
 displayItems(row, urlItems, urlLike)
 addLikes(urlLike, urlItems)
 displayPopup()
-  
+
 // document.addEventListener('click', (event) => {
 //     if (event.target && event.target.classList.contains('comments')) {
-//        const title = document.querySelector('.meal-title').innerText;
-//        const image = document.querySelector('.meal-image').src;
-//        const text = document.querySelector('.text-area');
-//        const input = document.querySelector('.input')
-//        const id = event.target.parentElement.id;
-//        console.log(id);
-//        displayPopup(title, image);
-//       const comments = getComment(id);
-//       console.log(event.target);
-//       document.querySelector('.data').innerHTML = '';
-//     //   comments.then(data => {
-//     //     data.forEach(newData => {
-//     //       const comment = `<div>${newData.creation_date} ${newData.username} ${newData.comment}</div>`
-//     //       document.querySelector('.data').innerHTML += comment;
-//     //     });
-//     //   });  
-//     console.log(comments);
-//       if (event.target && event.target.classList.contains('form-btn')) {
-//           e.preventDefault();
-//           addComment(id, input.value, text.value);
-//       }
+//         const title = document.querySelector('.meal-title').innerText;
+//         const image = document.querySelector('.meal-image').src;
+//         const text = document.querySelector('.text-area');
+//         const input = document.querySelector('.input')
+//         const id = event.target.parentElement.id;
+//         console.log(id);
+//         displayPopup(title, image);
+//         const comments = getComment(id);
+//         console.log(event.target);
+//         document.querySelector('.data').innerHTML = '';
+//         console.log(comments);
+//         if (event.target && event.target.classList.contains('form-btn')) {
+//             e.preventDefault();
+//             addComment(id, input.value, text.value);
+//         }
 //     }
-//   })
-
-
-document.addEventListener('click', (event) => {
-    if (event.target && event.target.classList.contains('comments')) {
-        const title = document.querySelector('.meal-title').innerText;
-        const image = document.querySelector('.meal-image').src;
-        const text = document.querySelector('.text-area');
-        const input = document.querySelector('.input')
-        const id = event.target.parentElement.id;
-        console.log(id);
-        displayPopup(title, image);
-        const comments = getComment(id);
-        console.log(event.target);
-        document.querySelector('.data').innerHTML = '';
-        console.log(comments);
-        if (event.target && event.target.classList.contains('form-btn')) {
-            e.preventDefault();
-            addComment(id, input.value, text.value);
-        }
-    }
-})
+// })
 
 document.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('reservations')) {

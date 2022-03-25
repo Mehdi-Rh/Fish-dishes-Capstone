@@ -68,19 +68,43 @@ const displayPopup = () => {
         const card = event.target.parentElement
        const title = card.querySelector('.meal-title').innerText;
        const image = card.querySelector('.meal-image').src;
-       const text = document.querySelector('.text-area');
-       const input = document.querySelector('.input')
        const id = event.target.parentElement.id;
-       console.log(id)
        setPopup(title, image);
-      const comments = getComment(id) || [] ;
+      getComment(id)
+      .then(response => {
+        if (response.length){
+          // Use this block of code to create your box
+
+          response.forEach(element => {
+          console.log(element.creation_date)
+          console.log(element.comment)
+          console.log(element.username)
+          // element.creation_date
+          // element.comment
+          // element.username   
+          });
+     
+      }
+    })
+
+
+
+      
+      
       document.querySelector('.data').innerHTML = '';  
-      console.log(comments);
+
+
         // Post comment on the API
-      const formButton = document.createElement('button');
-      formButton.addEventListener('click', () => {
-        addComment(id,input.value, text.value) 
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('form-btn')) {
+          const input = document.querySelector('.input')
+          const text = document.querySelector('.text-area');
+
+          console.log(id,input.value, text.value)
+          addComment(id,input.value, text.value) 
+        }
       })
+
     }
   })
 }
