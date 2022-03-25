@@ -43,7 +43,7 @@ const setPopup = (title, image, description = '') => {
 
   addComments.append(addTitle, form);
 
-  commentsPopup.append(closeButton, headComments, dataComments, addComments, );
+  commentsPopup.append(headComments, dataComments, addComments, closeButton );
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';
