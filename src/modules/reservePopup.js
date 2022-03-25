@@ -113,23 +113,9 @@ const displayReservationPopup = (title, image, description = '') => {
     window.location.reload();
   });
 
-  const reserveBtn1 = document.querySelector('.reserveBtn');
-
-  reserveBtn1.addEventListener('click', () => {
-    popupWindow.style.display = 'flex';
-  })
-
-  // export function displayPopup () {
-  //   document.addEventListener('click', (e) => {
-  //     if (e.target.classList.contains('reservations')) {
-  //       popupWindow.style.display = 'flex';
-  //     }
-  //   })
-  // }
-
   const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
-  let data = await getData(urlItems)
+  let data = urlItems;
   let get = data[0];
 
   const preview = document.querySelector('.image-container');
@@ -137,14 +123,12 @@ const displayReservationPopup = (title, image, description = '') => {
 <img class='preview' src=${get.strMealThumb}></img><p>${get.strMeal}</p>
 `;
 
-//   submitBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     addReservation();
-//     inputName.value = '';
-//     inputStartDate.value = '';
-//     inputEndDate.value = '';
-//     console.log(addReservation);
-//   })
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    inputName.value = '';
+    inputStartDate.value = '';
+    inputEndDate.value = '';
+  })
 }
 
 export default displayReservationPopup;

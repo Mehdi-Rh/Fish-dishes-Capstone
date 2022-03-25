@@ -17,17 +17,6 @@ export async function addReservation(urlReservation, itemId,username,date_start,
 export async function getReservation(urlReservation,item1) {
   urlReservation += `?item_id=${item1}`
   let data = await fetch(urlReservation);
-   await data.json();
+   const response = await data.json();
+   return response;
 }
-
-
-/* Generate urls of the involvment API */ 
-let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
-const apiId = "t9up9m5T6uECqwieuC71"
-const urlLike = urlStart + apiId + "/likes"
-let urlComment = urlStart + apiId + "/comments"
-let urlReservation = urlStart + apiId + "/reservations"
-
-urlReservation += `?item_id=item1`
-let data = await fetch(urlReservation);
- await data.json();

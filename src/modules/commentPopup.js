@@ -48,7 +48,7 @@ document.querySelector('.row').style.display = 'none';
 const btn = document.getElementById('closeBtn')
 btn.addEventListener('click', () => {
     commentsPopup.remove();
-    // location.reload();
+    location.reload();
 })
 
 headComments.innerHTML += `<div class='imgText'>
