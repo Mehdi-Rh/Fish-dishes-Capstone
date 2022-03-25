@@ -107,6 +107,12 @@ main {
   clear: both;
 }
 
+.reservations, .comments {
+  width: 100px;
+  height: 25px;
+  border-radius: 30px;
+}
+
 /* Style the counter cards */
 
 

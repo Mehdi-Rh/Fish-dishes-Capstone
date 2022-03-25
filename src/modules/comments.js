@@ -14,8 +14,8 @@ export async function addComment(itemId,username,comment) {
   })
 }
 
-export async function getComment(item1) {
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t9up9m5T6uECqwieuC71/comments?item_id=${item1}`
+export async function getComment(idItem) {
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t9up9m5T6uECqwieuC71/comments?item_id=${idItem}`
   let data = await fetch(url);
   const res = await data.json();
   return res;

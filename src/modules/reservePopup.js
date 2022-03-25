@@ -120,7 +120,7 @@ reserveBtn1.addEventListener('click', () => {
 
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
-let data = await getData(urlItems)
+let data = getData(urlItems)
 let get = data[0];
 
 const preview = document.querySelector('.image-container');

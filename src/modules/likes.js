@@ -1,8 +1,6 @@
-
-
 export async function getLikes(urlLike) {
   let data = await fetch(urlLike);
-  return  data.json();
+  return data.json();
 }
 
 export async function postLikes(urlLike, idItem) {
@@ -16,7 +14,7 @@ export async function postLikes(urlLike, idItem) {
       'Accept': 'application/json'
     },
   })
-    .then((data) => {console.log(data)});
+    .then((data) => { console.log(data) });
 }
 
 export function addLikes(urlLike) {
@@ -25,21 +23,21 @@ export function addLikes(urlLike) {
       const id = e.target.parentElement.id;
       postLikes(urlLike, id);
       setTimeout(() => {
-      const likeNumber =  getLikes(urlLike)
-      .then(response => {   
-          let likeNumb = response.find( ({item_id}) => item_id === id) 
-          likeNumb = (!!likeNumb ?  likeNumb.likes : 0)
-          console.log("likeNumber")
-          console.log(likeNumber)
-          const likeContainer = e.target.parentElement.parentElement
-          const like = likeContainer.children[1]
-          like.innerHTML = `${likeNumb} Likes`
-          e.target.style.color ="red";
-      }) 
-    },1000)
-   
+        const likeNumber = getLikes(urlLike)
+          .then(response => {
+            let likeNumb = response.find(({ item_id }) => item_id === id)
+            likeNumb = (!!likeNumb ? likeNumb.likes : 0)
+            console.log("likeNumber")
+            console.log(likeNumber)
+            const likeContainer = e.target.parentElement.parentElement
+            const like = likeContainer.children[1]
+            like.innerHTML = `${likeNumb} Likes`
+            e.target.style.color = "red";
+          })
+      }, 1000)
+
     }
-    }
+  }
   )
 }
 
