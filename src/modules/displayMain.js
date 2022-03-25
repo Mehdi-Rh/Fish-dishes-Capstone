@@ -14,7 +14,7 @@ export async function displayItems (mealContainer, url, urlLike) {
     divMeal += `
     <div class="column" id="${element.idMeal}">
       <img src="${element.strMealThumb}" class="meal-image" alt="Avatar"">
-      <div class="container">
+      <div class="containerCard">
         <h4 class="meal-title">${element.strMeal}</h4>
         <div class="likeContainer">
           <span id="${element.idMeal}"><i class="fas fa-heart"></i></span>

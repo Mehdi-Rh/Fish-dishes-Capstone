@@ -119,7 +119,7 @@ main {
   }
 }
 
-.container {
+.containerCard {
   display: flex;
   justify-content: space-evenly;
 }
