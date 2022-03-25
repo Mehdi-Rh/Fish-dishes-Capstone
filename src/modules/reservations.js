@@ -1,4 +1,5 @@
-export async function addReservation(urlReservation, itemId,username,date_start,date_end) {
+export async function addReservation(itemId, username, date_start, date_end) {
+  const urlReservation = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t9up9m5T6uECqwieuC71/reservations';
   await fetch(urlReservation, {
     method: 'POST',
     body: JSON.stringify({
@@ -14,9 +15,9 @@ export async function addReservation(urlReservation, itemId,username,date_start,
   })
 }
 
-export async function getReservation(urlReservation,item1) {
-  urlReservation += `?item_id=${item1}`
-  let data = await fetch(urlReservation);
+export async function getReservation(itemId) {
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/t9up9m5T6uECqwieuC71/reservations?item_id=${itemId}`
+  let data = await fetch(url);
    const response = await data.json();
    return response;
 }
