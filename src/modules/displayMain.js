@@ -1,8 +1,6 @@
 import {getData} from "./getData.js"
 import {getLikes} from "./likes.js"
 
-
-
 export async function displayItems (mealContainer, url, urlLike) {
   let divMeal = ''
   const likeList = await getLikes(urlLike)
@@ -15,9 +13,9 @@ export async function displayItems (mealContainer, url, urlLike) {
 
     divMeal += `
     <div class="column" id="${element.idMeal}">
-      <img src="${element.strMealThumb}" alt="Avatar"">
+      <img src="${element.strMealThumb}" class="meal-image" alt="Avatar"">
       <div class="container">
-        <h4><b>${element.strMeal}</b></h4>
+        <h4 class="meal-title">${element.strMeal}</h4>
         <div class="likeContainer">
           <span id="${element.idMeal}"><i class="fas fa-heart"></i></span>
           <p class="like">${likeNumber||0} Likes</p>
@@ -27,7 +25,6 @@ export async function displayItems (mealContainer, url, urlLike) {
       <button class="reservations" type="button">Reservations</button>   
     </div>
   `
-
   });
   mealContainer.innerHTML = divMeal
 }

@@ -1,15 +1,6 @@
-import {getData} from "../modules/getData.js"
-import {addComment, getComment} from "../modules/comments.js"
-
-const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
-
-let data = await getData(urlItems) // Copy this line to get your data 
-console.log(data[1]);
-
-let e = data[0]
-
-const popupBtn = document.getElementById('popupBtn');
-const commentsPopup = document.createElement('div');
+import '../comments/comment.css';
+const displayPopup = (title, image, description = '') => {
+  const commentsPopup = document.createElement('div');
 commentsPopup.setAttribute("id", "popup");
 commentsPopup.setAttribute("class", "container");
 
@@ -50,42 +41,22 @@ form.append(inputField, textArea, formButton);
 addComments.append(addTitle, form);
 
 commentsPopup.append(closeButton, headComments, dataComments, addComments, );
-
-document.body.append(commentsPopup);
-
-popupBtn.addEventListener('click', () => {
-    commentsPopup.style.display = 'flex';
-})
+commentsPopup.style.display = 'flex';
+document.querySelector('.popup-section').append(commentsPopup);
+document.querySelector('.row').style.display = 'none';
 
 const btn = document.getElementById('closeBtn')
 btn.addEventListener('click', () => {
     commentsPopup.remove();
-    location.reload();
+    // location.reload();
 })
 
-headComments.innerHTML += `<div class='imgText' id=${e.idMeal}>
-<img class='card-img' src=${e.strMealThumb}>
-<p>${e.strMeal}</p>
+headComments.innerHTML += `<div class='imgText'>
+<h2>${title}</h2>
+<img class='card-img' src=${image}>
+<p>${description}</p>
 </div>`;
 
+}
 
-formButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  addComment('mango','galaxy','hello');
-  
-})
-
-document.addEventListener('click', (event) => {
-  if (event.target && event.target.classList.contains('popup-btn')) {
-    const comments = getComment('mango');
-    document.querySelector('.data').innerHTML = '';
-    comments.then(data => {
-      data.forEach(newData => {
-        const comment = `<div>${newData.creation_date} ${newData.username} ${newData.comment}</div>`
-        document.querySelector('.data').innerHTML += comment;
-      });
-    });
-
-
-  }
-})
+export default displayPopup;
