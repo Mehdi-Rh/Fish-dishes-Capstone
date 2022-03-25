@@ -76,14 +76,8 @@ const displayPopup = () => {
       const comments = getComment(id) || [] ;
       document.querySelector('.data').innerHTML = '';  
       console.log(comments);
-      // if (event.target && event.target.classList.contains('form-btn')) {
-      //     e.preventDefault();
-      //     addComment(id, input.value, text.value);
-      // }
-
         // Post comment on the API
       const formButton = document.createElement('button');
-
       formButton.addEventListener('click', () => {
         addComment(id,input.value, text.value) 
       })
