@@ -22,7 +22,7 @@ export async function displayItems (mealContainer, url, urlLike) {
         </div>
       </div>
       <button class="comments" type="button">Comments</button>
-      <button class="reservations" type="button">Reservations</button>   
+      <button class="reservations" type="button">Reservations</button>  
     </div>
   `
   });

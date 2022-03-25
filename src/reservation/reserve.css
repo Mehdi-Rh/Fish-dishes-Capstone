@@ -12,9 +12,10 @@
     position: relative;
     width: 40%;
     height: 95vh;
+    margin: auto;
+    padding-bottom: 30px;
     display: none;
     flex-direction: column;
-    margin: auto;
     border: 2px solid var(--curious);
     border-radius: 10px;
     box-shadow: 5px 3px 8px var(--curious);
@@ -93,11 +94,11 @@
 .reservations {
     position: relative;
     width: 70%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 .reservations h2 {
@@ -124,7 +125,7 @@
 
 form {
     width: 70%;
-    height: 200px;
+    height: 180px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -146,7 +147,7 @@ form .name, .startDate, .endDate {
     color: var(--sapphire);
 }
 
-form #reserveBtn {
+#reserveBtn {
     width: 100px;
     height: 30px;
     justify-self: center;
