@@ -25,7 +25,8 @@ export default async function displayItems(mealContainer, url, urlLike) {
           <p class="like">${likeNumber || 0} Likes</p>
         </div>
       </div>
-      <button class="comments" type="button">More</button>
+      <button class="comments" type="button">Comments</button>
+      <button class="reservationBtn" type="button">Reservations</button> 
     </div>
   `;
   });
