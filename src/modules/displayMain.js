@@ -1,6 +1,6 @@
 import getData from './getData.js';
 import { getLikes } from './likes.js';
-import { itemCount } from './itemCounter.js';
+import itemCount from './itemCounter.js';
 
 export default async function displayItems(mealContainer, url, urlLike) {
   let divMeal = '';
@@ -10,7 +10,7 @@ export default async function displayItems(mealContainer, url, urlLike) {
   document.querySelector('.nav-item').children[0].innerHTML += `(${count})`;
 
   data.forEach((element) => {
-    let likeNumber = likeList.find(x => x.item_id === element.idMeal);
+    let likeNumber = likeList.find((x) => x.item_id === element.idMeal);
     // The line below it to prevent from item not integrated on the api
     likeNumber = (likeNumber ? likeNumber.likes : 0);
 
@@ -25,7 +25,7 @@ export default async function displayItems(mealContainer, url, urlLike) {
         </div>
       </div>
       <button class="comments" type="button">Comments</button>
-      <button class="reservations" type="button">Reservations</button>  
+      <button class="reservationBtn" type="button">Reservations</button>  
     </div>
   `;
   });

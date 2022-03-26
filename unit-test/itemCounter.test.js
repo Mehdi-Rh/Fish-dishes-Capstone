@@ -1,4 +1,4 @@
-import { itemCount } from '../src/modules/itemCounter.js';
+import itemCount from '../src/modules/itemCounter.js';
 
 describe('coutItem', () => {
   test('Test 1', () => {

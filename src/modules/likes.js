@@ -13,8 +13,7 @@ export async function postLikes(urlLike, idItem) {
       'Content-type': 'application/json; charset=UTF-8',
       Accept: 'application/json',
     },
-  })
-    .then((data) => { console.log(data); });
+  });
 }
 
 export function addLikes(urlLike) {
@@ -25,7 +24,7 @@ export function addLikes(urlLike) {
       setTimeout(() => {
         getLikes(urlLike)
           .then((response) => {
-            let likeNumb = response.find(({ item_id }) => item_id === id);
+            let likeNumb = response.find((x) => x.item_id === id);
             likeNumb = (likeNumb ? likeNumb.likes : 0);
             const likeContainer = e.target.parentElement.parentElement;
             const like = likeContainer.children[1];

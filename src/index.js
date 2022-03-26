@@ -25,7 +25,7 @@ document.addEventListener('click', (event) => {
   if (event.target && event.target.classList.contains('reservations')) {
     const title = document.querySelector('.meal-title').innerText;
     const image = document.querySelector('.meal-image').src;
-    const { id } = event.target.parentElement;
+    // const { id } = event.target.parentElement;
     displayReservationPopup(title, image);
     // const reservations = getReservation(id);
     // console.log(event.target);
