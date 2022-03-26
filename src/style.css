@@ -130,15 +130,12 @@ main {
   justify-content: space-evenly;
 }
 
-/* ******** FOOTER ******** */
+/* footer */
 footer {
-  position: absolute;
-  width: 100%;
-  height: 150px;
   display: block;
   padding: 3rem 2rem;
-  bottom: 0;
-  background-color: var(--azureish);
+  background-color: var(--light);
+
 }
 
 footer .wrapper.wrapper {
