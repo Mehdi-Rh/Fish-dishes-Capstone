@@ -1,13 +1,13 @@
 import getData from './getData.js';
 import { getLikes } from './likes.js';
-import itemCount from './itemCounter.js';
+// import itemCount from './itemCounter.js'; //Try to fix this implementation please guys
 
 export default async function displayItems(mealContainer, url, urlLike) {
   let divMeal = '';
   const likeList = await getLikes(urlLike);
   const data = await getData(url); // Copy this line to get your data
-  const count = itemCount(data);
-  document.querySelector('.nav-item').children[0].innerHTML += `(${count})`;
+  // const count = itemCount(data);
+  // document.querySelector('.nav-item').children[0].innerHTML += `(${count})`;
 
   data.forEach((element) => {
     let likeNumber = likeList.find((x) => x.item_id === element.idMeal);
