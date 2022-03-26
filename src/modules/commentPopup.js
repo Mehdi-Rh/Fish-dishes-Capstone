@@ -5,7 +5,7 @@ import {addComment, getComment} from './comments.js'
 const setPopup = (title, image, description = '') => {
   const commentsPopup = document.createElement('div');
   commentsPopup.setAttribute("id", "popup");
-  commentsPopup.setAttribute("class", "container");
+  commentsPopup.setAttribute("class", "container-popup");
 
   const headComments = document.createElement('div');
   headComments.classList.add('head-comments');
@@ -69,7 +69,7 @@ formButton.addEventListener('click', () => {
 });
 
 
-  commentsPopup.append(headComments, update,  dataComments, addComments, closeButton);
+  commentsPopup.append(headComments, addComments, update, closeButton);
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';

@@ -1,8 +1,8 @@
-.container {
+.container-popup {
     display: none;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 6fr 4fr 2fr;
     /* flex-direction: column; */
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 10%;
@@ -14,9 +14,9 @@
     /* overflow-y: scroll; */
     z-index: 2;
     border: transparent;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-top: 40px 0;
-    gap: 26px;
+    gap: 46px;
     box-shadow: 5px 10px rgba(190, 189, 183, 0.9);
 
   }
@@ -34,11 +34,11 @@
   }
   .head-comments {
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: column;
       justify-content: space-between;
       align-items: center;
       gap: 48px;
-      /* padding-top: 20px; */
+      padding-top: 20px;
   }
 
   .card-img {
@@ -64,16 +64,16 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
+      width: 40%;
       gap: 32px;
   }
   
   .form {
-    width: 400px;
+    /* width: 400px; */
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
   
   input {
@@ -111,3 +111,26 @@
     font-weight: bold;
   }
 
+  .new-update {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    gap: 12px;
+    
+  }
+   .new-update > li {
+    background-color: rgb(177, 171, 164);
+    border: 1px solid green;
+    border-radius: 4px;
+   }
+
+.imgText {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: none;
+}
