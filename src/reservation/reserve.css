@@ -11,7 +11,7 @@
 .container {
     position: relative;
     width: 40%;
-    height: 95vh;
+    height: 80vh;
     margin: auto;
     padding-bottom: 30px;
     display: none;
@@ -21,10 +21,7 @@
     box-shadow: 5px 3px 8px var(--curious);
 }
 
-#reserveButton {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+#reserveBtn {
     width: 100px;
     height: 30px;
     color: var(--sapphire);
@@ -32,15 +29,18 @@
     border: 1px solid var(--cerulean);
     outline: none;
     cursor: pointer;
-    box-shadow: 5px 3px 3px var(--curious);
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    box-shadow: 2px 2px 2px var(--curious);
 }
 
-#reserveButton:hover {
+#reserveBtn:hover {
     background: var(--cerulean);
     color: var(--azureish);
 }
 
-#reserveButton:active {
+#reserveBtn:active {
     transform: translateY(2px);
 }
 

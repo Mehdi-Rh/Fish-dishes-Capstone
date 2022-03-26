@@ -107,7 +107,7 @@ main {
   clear: both;
 }
 
-.reservations, .comments {
+.reservationBtn, .comments {
   width: 100px;
   height: 25px;
   border-radius: 30px;

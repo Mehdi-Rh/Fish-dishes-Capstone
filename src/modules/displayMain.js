@@ -1,4 +1,4 @@
-import {getData} from "./getData.js"
+import { getData } from "../index.js"
 import {getLikes} from "./likes.js"
 
 export async function displayItems (mealContainer, url, urlLike) {
@@ -22,7 +22,7 @@ export async function displayItems (mealContainer, url, urlLike) {
         </div>
       </div>
       <button class="comments" type="button">Comments</button>
-      <button class="reservations" type="button">Reservations</button>  
+      <button class="reservationBtn" type="button">Reservations</button>  
     </div>
   `
   });

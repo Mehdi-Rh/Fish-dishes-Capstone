@@ -3,9 +3,7 @@ import './style.css';
 import { displayItems } from './modules/displayMain.js'
 import { addLikes } from './modules/likes';
 import displayPopup from './modules/commentPopup.js';
-import { getComment, addComment } from './modules/comments.js'
-import displayReservationPopup from './modules/reservePopup.js';
-import { addReservation, getReservation } from './modules/reservations.js';
+
 
 const row = document.querySelector('.row')
 const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
@@ -14,46 +12,29 @@ const urlItems = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 let urlStart = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/"
 const apiId = "t9up9m5T6uECqwieuC71"
 const urlLike = urlStart + apiId + "/likes"
-let urlComment = urlStart + apiId + "/comments"
-const urlReservation = urlStart + apiId + "/reservations"
+// let urlComment = urlStart + apiId + "/comments"
+// const urlReservation = urlStart + apiId + "/reservations"
 
 /* Run functionalities */
 displayItems(row, urlItems, urlLike)
 addLikes(urlLike, urlItems)
 displayPopup()
 
-// document.addEventListener('click', (event) => {
-//     if (event.target && event.target.classList.contains('comments')) {
-//         const title = document.querySelector('.meal-title').innerText;
-//         const image = document.querySelector('.meal-image').src;
-//         const text = document.querySelector('.text-area');
-//         const input = document.querySelector('.input')
-//         const id = event.target.parentElement.id;
-//         console.log(id);
-//         displayPopup(title, image);
-//         const comments = getComment(id);
-//         console.log(event.target);
-//         document.querySelector('.data').innerHTML = '';
-//         console.log(comments);
-//         if (event.target && event.target.classList.contains('form-btn')) {
-//             e.preventDefault();
-//             addComment(id, input.value, text.value);
-//         }
-//     }
-// })
+const show = (data) => {
+    displayItems(row, data)
+    const reservationBtn = document.querySelector('.reservationBtn');
+    console.log(reservationBtn);
+}
 
-document.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains('reservations')) {
-        const id = e.target.parentElement.id;
-        console.log(id);
-        displayReservationPopup();
-        const reservations = getReservation(id);
-        console.log(e.target);
-        document.querySelector('.topContent')
-        console.log(reservations);
-        if (e.target && e.target.classList.contains('reservations')) {
-            e.preventDefault();
-            addReservation(input.value);
-        }
-    }
+const showPopupReserve = document.querySelector('.container');
+const reserveBtn = document.querySelector('.reservationBtn');
+reserveBtn.addEventListener('click', () => {
+    showPopupReserve.style.display = 'flex';
 })
+
+export async function getData() {
+    let data = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+    data = await data.json();
+    show(data.meals);
+    return data.meals;
+}
