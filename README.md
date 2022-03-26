@@ -53,9 +53,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Moise Mulungu](https://github.com/moise-mulungu)
+- Twitter: [Moise Mulungu](https://twitter.com/moise_mulungu)
+- LinkedIn: [Moise Mulungu](https://www.linkedin.com/in/mo%C3%AFse-mulungu-a939831b2/)
 
 👤 **Stanley SIMEON**
 
