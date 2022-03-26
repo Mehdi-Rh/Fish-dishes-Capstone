@@ -2,20 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     index: './src/index.js',
   },
-  devtool: false,
-  devServer: {
-    static: './dist',
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'delecious-fuish',
       template: './src/index.html',
     }),
   ],
+  devServer: {
+    static: './dist',
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -27,13 +25,21 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        loader: 'babel-loader',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
       },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
+      // {
+      //   test: /\.m?js$/,
+      //   exclude: /(node_modules|bower_components)/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['@babel/preset-env'],
+      //       plugins: ['@babel/plugin-proposal-object-rest-spread']
+      //     }
+      //   }
+      // }
     ],
   },
 };
