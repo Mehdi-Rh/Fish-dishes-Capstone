@@ -6,7 +6,9 @@
 
 > One paragraph statement about the project.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./delicious-meal.png)
+
+
 
 Additional description about the project and its features.
 
@@ -19,6 +21,10 @@ Additional description about the project and its features.
 ## Live Demo
 
 [Live Demo Link](https://livedemo.com)
+
+## Video Presentation
+
+[Video demo](https://www.loom.com/share/d94cb47c28e3407bb69af558e4d8fec6)
 
 
 ## Getting Started
