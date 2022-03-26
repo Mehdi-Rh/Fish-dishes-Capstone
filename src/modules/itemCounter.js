@@ -1,0 +1,1 @@
+export const itemCount = (itemList) => itemList.length
