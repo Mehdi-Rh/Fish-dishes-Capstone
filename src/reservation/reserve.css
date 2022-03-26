@@ -10,16 +10,16 @@
 }
 
 .containers {
-    position: relative;
-    width: 40%;
-    height: 80vh;
-    margin: auto;
-    padding-bottom: 30px;
-    display: none;
-    flex-direction: column;
-    border: 2px solid var(--curious);
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px var(--curious);
+  position: relative;
+  width: 40%;
+  height: 80vh;
+  margin: auto;
+  padding-bottom: 30px;
+  display: none;
+  flex-direction: column;
+  border: 2px solid var(--curious);
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px var(--curious);
 }
 
 #reserveBtn {
