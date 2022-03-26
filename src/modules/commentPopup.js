@@ -119,9 +119,6 @@ const displayPopup = () => {
     })
 
 
-
-      
-      
       document.querySelector('.data').innerHTML = '';  
 
         // Post comment on the API
