@@ -1,11 +1,17 @@
 import {getData} from "./getData.js"
 import {getLikes} from "./likes.js"
+import {itemCount} from "./itemCounter.js"
+
+
 
 export async function displayItems (mealContainer, url, urlLike) {
   let divMeal = ''
   const likeList = await getLikes(urlLike)
-  const data = await getData(url) // Copy this line to get your data ({x})
-  
+  const data = await getData(url) // Copy this line to get your data 
+  const count = itemCount(data)
+  document.querySelector('.nav-item').children[0].innerHTML += `(${count})`
+  console.log("data length : " +count )
+
   data.forEach((element) => {
     let likeNumber = likeList.find( ({item_id}) => item_id === element.idMeal) 
     // The line below it to prevent from item not integrated on the api
@@ -28,3 +34,4 @@ export async function displayItems (mealContainer, url, urlLike) {
   });
   mealContainer.innerHTML = divMeal
 }
+

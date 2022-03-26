@@ -23,7 +23,7 @@ export function addLikes(urlLike) {
       const id = e.target.parentElement.id;
       postLikes(urlLike, id);
       setTimeout(() => {
-        const likeNumber = getLikes(urlLike)
+        getLikes(urlLike)
           .then(response => {
             let likeNumb = response.find(({ item_id }) => item_id === id)
             likeNumb = (!!likeNumb ? likeNumb.likes : 0)
