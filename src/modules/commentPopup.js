@@ -44,7 +44,32 @@ const setPopup = (title, image, description = '') => {
 
   addComments.append(addTitle, form);
 
-  commentsPopup.append(headComments,  dataComments, addComments, closeButton);
+  const update = document.createElement('ul');
+  update.classList.add('new-update');
+
+  
+  const updateComments = () => {
+      
+    const li = document.createElement('li');
+    const date = new Date();
+    const day = date.getDay();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    li.innerHTML += `
+      <li class="userInput">
+      ${year} ${-month} ${-day} </br> ${inputField.value} : ${textArea.value}
+      </li>
+      `;
+    update.append(li);
+  };
+formButton.addEventListener('click', () => {
+  updateComments();
+  inputField.value = '';
+  textArea.value = '';
+});
+
+
+  commentsPopup.append(headComments, update,  dataComments, addComments, closeButton);
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';
@@ -96,21 +121,20 @@ const displayPopup = () => {
 
       document.querySelector('.data').innerHTML = '';  
 
-
         // Post comment on the API
       document.addEventListener('click', (e) => {
         if (e.target.classList.contains('form-btn')) {
           const input = document.querySelector('.input')
           const text = document.querySelector('.text-area');
-
-          console.log(id,input.value, text.value)
+      
           addComment(id,input.value, text.value) 
         }
       })
 
+     
+
     }
   })
 }
-
 
 export default displayPopup;
