@@ -4,7 +4,7 @@ import { addComment, getComment } from './comments.js';
 const setPopup = (title, image, description = '') => {
   const commentsPopup = document.createElement('div');
   commentsPopup.setAttribute('id', 'popup');
-  commentsPopup.setAttribute('class', 'container');
+  commentsPopup.setAttribute('class', 'container-popup');
 
   const headComments = document.createElement('div');
   headComments.classList.add('head-comments');
@@ -65,7 +65,7 @@ const setPopup = (title, image, description = '') => {
     textArea.value = '';
   });
 
-  commentsPopup.append(headComments, update, dataComments, addComments, closeButton);
+  commentsPopup.append(headComments, addComments, update, closeButton);
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';
@@ -94,24 +94,15 @@ const displayPopup = () => {
       getComment(id)
         .then((response) => {
           if (response.length) {
-          // Use this block of code to create your box
-
+            // Use this block of code to create your box
             response.forEach((element) => {
               const commentsData = document.getElementById('newData');
               commentsData.innerHTML = `<p>${element.creation_date}</p>
             <p>${element.comment}</p>
             <p>${element.username}</p>`;
-
-              // console.log(element.creation_date)
-              // console.log(element.comment)
-              // console.log(element.username)
-              // element.creation_date
-              // element.comment
-              // element.username
             });
           }
         });
-
       document.querySelector('.data').innerHTML = '';
 
       // Post comment on the API

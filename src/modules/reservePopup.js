@@ -1,119 +1,121 @@
-// const popupWindow = document.querySelector('.container');
-// const topContent = document.createElement('div');
-// topContent.className = 'top-content';
-// popupWindow.appendChild(topContent);
+import '../comments/comment.css';
+import { addComment, getComment } from './comments.js';
 
-// const imageContainer = document.createElement('div');
-// imageContainer.className = 'image-container';
-// topContent.appendChild(imageContainer);
+const setPopup = (title, image, description = '') => {
+  const commentsPopup = document.createElement('div');
+  commentsPopup.setAttribute('id', 'popup');
+  commentsPopup.setAttribute('class', 'container-popup');
 
-// const faTimes = document.createElement('i');
-// faTimes.className = 'fa fa-times';
-// faTimes.id = 'close-popup';
-// topContent.appendChild(faTimes);
+  const headComments = document.createElement('div');
+  headComments.classList.add('head-comments');
 
-// const reservations = document.createElement('div');
-// reservations.className = 'reservations';
-// popupWindow.appendChild(reservations);
+  const closeButton = document.createElement('i');
+  closeButton.className = 'fa fa-times';
+  closeButton.id = 'closeBtn';
 
-// const h2Reserve = document.createElement('h2');
-// h2Reserve.innerText = 'Reservations';
-// reservations.appendChild(h2Reserve);
+  const dataComments = document.createElement('div');
+  dataComments.classList.add('data');
+  dataComments.id = 'newData';
 
-// const span00 = document.createElement('span');
-// span00.innerText = ' ';
-// h2Reserve.appendChild(span00);
+  const addComments = document.createElement('div');
+  addComments.classList.add('add-comments');
 
-// const span0 = document.createElement('span');
-// span0.innerText = '(';
-// h2Reserve.appendChild(span0);
+  const addTitle = document.createElement('h2');
+  addTitle.textContent = 'Add comment';
 
-// const span1 = document.createElement('span');
-// span1.id = 'counter';
-// span1.innerText = '';
-// h2Reserve.appendChild(span1);
+  const form = document.createElement('form');
+  form.setAttribute('class', 'form');
 
-// const span2 = document.createElement('span');
-// span2.innerText = ')';
-// h2Reserve.appendChild(span2);
+  const inputField = document.createElement('input');
+  inputField.setAttribute('type', 'text');
+  inputField.classList.add('input');
+  inputField.setAttribute('placeholder', 'Your name');
 
-// const form = document.createElement('form');
-// form.action = '#';
-// form.id = 'form';
-// popupWindow.appendChild(form);
+  const textArea = document.createElement('textarea');
+  textArea.setAttribute('placeholder', 'Your comment ...');
+  textArea.classList.add('text-area');
 
-// const h2Form = document.createElement('h2');
-// h2Form.innerText = 'Add a reservations';
-// form.appendChild(h2Form);
+  const formButton = document.createElement('button');
+  formButton.setAttribute('type', 'button');
+  formButton.classList.add('form-btn');
+  formButton.textContent = 'Comment';
+  form.append(inputField, textArea, formButton);
 
-// const inputName = document.createElement('input');
-// inputName.type = 'text';
-// inputName.name = 'name';
-// inputName.className = 'name';
-// inputName.placeholder = 'Your name';
-// inputName.required;
-// form.appendChild(inputName);
+  addComments.append(addTitle, form);
 
-// const inputStartDate = document.createElement('input');
-// inputStartDate.type = 'date';
-// inputStartDate.name = 'date';
-// inputStartDate.className = 'startDate';
-// inputStartDate.placeholder = 'Start date';
-// inputStartDate.required;
-// form.appendChild(inputStartDate);
+  const update = document.createElement('ul');
+  update.classList.add('new-update');
 
-// const inputEndDate = document.createElement('input');
-// inputEndDate.type = 'date';
-// inputEndDate.name = 'date';
-// inputEndDate.className = 'endDate';
-// inputEndDate.placeholder = 'End date';
-// inputEndDate.required;
-// form.appendChild(inputEndDate);
+  const updateComments = () => {
+    const li = document.createElement('li');
+    const date = new Date();
+    const day = date.getDay();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    li.innerHTML += `
+      <li class='userInput'>
+      ${year} ${-month} ${-day} </br> ${inputField.value} : ${textArea.value}
+      </li>
+      `;
+    update.append(li);
+  };
+  formButton.addEventListener('click', () => {
+    updateComments();
+    inputField.value = '';
+    textArea.value = '';
+  });
 
-// const submitBtn = document.createElement('button');
-// submitBtn.type = 'submit';
-// submitBtn.id = 'reserveBtn';
-// submitBtn.innerText = 'Reservations';
-// form.appendChild(submitBtn);
+  commentsPopup.append(headComments, addComments, update, closeButton);
+  commentsPopup.style.display = 'flex';
+  document.querySelector('.popup-section').append(commentsPopup);
+  document.querySelector('.row').style.display = 'none';
 
-// const closeBtn = document.getElementById('close-popup');
-// const reserveBtn = document.getElementById('reserveBtn');
-// const reserveContainer = document.querySelector('.reservations');
+  const btn = document.getElementById('closeBtn');
+  btn.addEventListener('click', () => {
+    commentsPopup.remove();
+    window.location.reload();
+  });
 
-// let count = 0;
-// reserveBtn.addEventListener('click', () => {
-//   count += 1;
-//   document.getElementById('counter').innerHTML = count;
-// });
-// const reservationsBox = document.createElement('ul');
-// reservationsBox.className = 'reservations-box';
-// reserveContainer.appendChild(reservationsBox);
+  headComments.innerHTML += `<div class='imgText'>
+  <h2>${title}</h2>
+  <img class='card-img' src=${image}>
+  <p>${description}</p>
+  </div>`;
+};
 
-// closeBtn.addEventListener('click', () => {
-//   popupWindow.remove();
-//   window.location.reload();
-// });
+const displayPopup = () => {
+  document.addEventListener('click', (event) => {
+    if (event.target && event.target.classList.contains('reservationBtn')) {
+      const card = event.target.parentElement;
+      const title = card.querySelector('.meal-title').innerText;
+      const image = card.querySelector('.meal-image').src;
+      const { id } = event.target.parentElement;
+      setPopup(title, image);
+      getComment(id)
+        .then((response) => {
+          if (response.length) {
+            // Use this block of code to create your box
+            response.forEach((element) => {
+              const commentsData = document.getElementById('newData');
+              commentsData.innerHTML = `<p>${element.creation_date}</p>
+            <p>${element.comment}</p>
+            <p>${element.username}</p>`;
+            });
+          }
+        });
+      document.querySelector('.data').innerHTML = '';
 
-// const preview = document.querySelector('.image-container');
-// //   preview.innerHTML += `
-// // <img class='preview' src=${strMealThumb}></img><p>${strMeal}</p>
-// // `;
+      // Post comment on the API
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('form-btn')) {
+          const input = document.querySelector('.input');
+          const text = document.querySelector('.text-area');
 
-// const displayReservationPopup = () => {
-//   document.addEventListener('click', (event) => {
-//     if (event.target && event.target.classList.contains('reservations')) {
-//       const { id } = event.target.parentElement;
-//       console.log(id);
-//       setReservation();
-//       const reservations = getReservation(id) || [];
-//       document.querySelector('.container').innerHTML = '';
-//       console.log(reservations);
-//       const formBtn = document.getElementById('reservations');
-//       formBtn.addEventListener('click', () => {
-//         addReservation(input.value);
-//       });
-//     }
-//   });
-// };
+          addComment(id, input.value, text.value);
+        }
+      });
+    }
+  });
+};
 
-// export default displayReservationPopup;
+export default displayPopup;
