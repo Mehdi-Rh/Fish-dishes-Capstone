@@ -72,7 +72,7 @@ const setReservation = (strMealThumb, strMeal) => {
   inputName.className = 'name';
   inputName.placeholder = 'Your name';
   inputName.required;
-  form.appendChild(inputName)
+  form.appendChild(inputName);
 
   const inputStartDate = document.createElement('input');
   inputStartDate.type = 'date';
@@ -80,7 +80,7 @@ const setReservation = (strMealThumb, strMeal) => {
   inputStartDate.className = 'startDate';
   inputStartDate.placeholder = 'Start date';
   inputStartDate.required;
-  form.appendChild(inputStartDate)
+  form.appendChild(inputStartDate);
 
   const inputEndDate = document.createElement('input');
   inputEndDate.type = 'date';
@@ -107,7 +107,7 @@ const setReservation = (strMealThumb, strMeal) => {
   reserveBtn.addEventListener('click', () => {
     count += 1;
     document.getElementById('counter').innerHTML = count;
-  })
+  });
 
   closeBtn.addEventListener('click', () => {
     popupWindow.remove();
@@ -118,13 +118,13 @@ const setReservation = (strMealThumb, strMeal) => {
   preview.innerHTML += `
 <img class='preview' src=${strMealThumb}></img><p>${strMeal}</p>
 `;
-}
+};
 
 const displayReservationPopup = () => {
   document.addEventListener('click', (event) => {
     if (event.target && event.target.classList.contains('reservations')) {
-      const id = event.target.parentElement.id;
-      console.log(id)
+      const { id } = event.target.parentElement;
+      console.log(id);
       setReservation();
       const reservations = getReservation(id) || [];
       document.querySelector('.container').innerHTML = '';
@@ -132,10 +132,9 @@ const displayReservationPopup = () => {
       const formBtn = document.getElementById('reservations');
       formBtn.addEventListener('click', () => {
         addReservation(input.value);
-      })
+      });
     }
-  })
-}
+  });
+};
 
 export default displayReservationPopup;
-

@@ -24,6 +24,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.0.0",
     "gh-pages": "^3.2.3",
+    "lodash": "^4.17.21",
     "parcel-bundler": "^1.12.5"
   },
   "devDependencies": {
@@ -39,7 +40,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.4",
     "express": "^4.17.2",
-    "hint": "^6.1.9",
+    "hint": "^6.1.10",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
