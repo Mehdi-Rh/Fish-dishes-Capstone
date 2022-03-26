@@ -27,8 +27,6 @@ export function addLikes(urlLike) {
           .then(response => {
             let likeNumb = response.find(({ item_id }) => item_id === id)
             likeNumb = (!!likeNumb ? likeNumb.likes : 0)
-            console.log("likeNumber")
-            console.log(likeNumber)
             const likeContainer = e.target.parentElement.parentElement
             const like = likeContainer.children[1]
             like.innerHTML = `${likeNumb} Likes`

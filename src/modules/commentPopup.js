@@ -88,9 +88,6 @@ const displayPopup = () => {
     })
 
 
-
-      
-      
       document.querySelector('.data').innerHTML = '';  
 
 
