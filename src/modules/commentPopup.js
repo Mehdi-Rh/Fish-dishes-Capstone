@@ -16,6 +16,7 @@ const setPopup = (title, image, description = '') => {
 
   const dataComments = document.createElement('div');
   dataComments.classList.add('data');
+  dataComments.id = 'newData';
 
   const addComments = document.createElement('div');
   addComments.classList.add('add-comments');
@@ -43,7 +44,7 @@ const setPopup = (title, image, description = '') => {
 
   addComments.append(addTitle, form);
 
-  commentsPopup.append(closeButton, headComments, dataComments, addComments, );
+  commentsPopup.append(headComments,  dataComments, addComments, closeButton);
   commentsPopup.style.display = 'flex';
   document.querySelector('.popup-section').append(commentsPopup);
   document.querySelector('.row').style.display = 'none';
@@ -76,9 +77,14 @@ const displayPopup = () => {
           // Use this block of code to create your box
 
           response.forEach(element => {
-          console.log(element.creation_date)
-          console.log(element.comment)
-          console.log(element.username)
+            const commentsData = document.getElementById('newData')
+            commentsData.innerHTML =`<p>${element.creation_date}</p>
+            <p>${element.comment}</p>
+            <p>${element.username}</p>`
+
+          // console.log(element.creation_date)
+          // console.log(element.comment)
+          // console.log(element.username)
           // element.creation_date
           // element.comment
           // element.username   
