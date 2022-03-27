@@ -6,7 +6,9 @@
 
 > One paragraph statement about the project.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./delicious-meal.png)
+
+
 
 Additional description about the project and its features.
 
@@ -19,6 +21,10 @@ Additional description about the project and its features.
 ## Live Demo
 
 [Live Demo Link](https://livedemo.com)
+
+## Video Presentation
+
+[Video demo](https://www.loom.com/share/d94cb47c28e3407bb69af558e4d8fec6)
 
 
 ## Getting Started
@@ -53,9 +59,15 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Moise Mulungu](https://github.com/moise-mulungu)
+- Twitter: [Moise Mulungu](https://twitter.com/moise_mulungu)
+- LinkedIn: [Moise Mulungu](https://www.linkedin.com/in/mo%C3%AFse-mulungu-a939831b2/)
+
+👤 **Stanley SIMEON**
+
+- GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
+- Twitter [@mstanleyme](https://twitter.com/mstanleyme)
+- LinkedIn [LinkedIn](https://www.linkedin.com/in/stanley-simeon-881091224/)
 
 ## 🤝 Contributing
 
