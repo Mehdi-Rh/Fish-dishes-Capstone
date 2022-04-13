@@ -1,16 +1,8 @@
-# Javascript-Capstone
+# Fish-dishes-Capstone
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> One paragraph statement about the project.
-
 ![screenshot](./delicious-meal.png)
-
-
-
-Additional description about the project and its features.
 
 ## Built With
 
