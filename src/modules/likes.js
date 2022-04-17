@@ -29,7 +29,8 @@ export function addLikes(urlLike) {
             const likeContainer = e.target.parentElement.parentElement;
             const like = likeContainer.children[1];
             like.innerHTML = `${likeNumb} Likes`;
-            e.target.style.color = 'red';
+            e.target.classList.add("fa-2x")
+            // e.target.style.size = 10;
           });
       }, 1000);
     }

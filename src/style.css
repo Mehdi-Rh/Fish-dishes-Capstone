@@ -1,3 +1,11 @@
+/* 
+Mediterranean Blue – #027EBC
+Caribbean Sea – #7BCEF6
+Cool Water – #D4EEFB
+Orange Bolt – #FE2601
+Sun Glow – #FED032 
+*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,11 +13,11 @@
 }
 
 body {
-  --sapphire: #001b48;
-  --cerulean: #004581;
-  --curious: #018abd;
-  --light: #97cbdc;
-  --azureish: #dde8f0;
+  --dark: #027EBC;
+  --midd: #7BCEF6;
+  --light: #D4EEFB;
+  --red: #FE2601;
+  --yell: #FED032;
 
   overflow-x: hidden;
 }
@@ -24,7 +32,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
-  background: var(--azureish);
+  background: var(--dark);
 }
 
 .navbar {
@@ -40,11 +48,11 @@ header {
   align-content: center;
   font-weight: 900;
   font-size: 3rem;
-  color: var(--sapphire);
+  color: var(--light);
 }
 
 .logo span {
-  color: var(--cerulean);
+  color: var(--yell);
 }
 
 .nav-menu {
@@ -65,7 +73,7 @@ header {
 }
 
 .nav-item a {
-  color: var(--sapphire);
+  color: var(--light);
   font-weight: 500;
   font-size: 24px;
   line-height: 20px;
@@ -86,7 +94,7 @@ main {
   margin: 5%;
   border-radius: 8px;
   text-align: center;
-  background-color: var(--light);
+  background-color: var(--yell);
 }
 
 .column img {
@@ -114,6 +122,10 @@ main {
   width: 100px;
   height: 25px;
   border-radius: 30px;
+}
+
+.fa-heart {
+  color: var(--red)
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
@@ -145,7 +157,7 @@ footer .wrapper.wrapper {
 }
 
 footer .branding {
-  color: var(--primary);
+  color: var(--yell);
   font-family: var(--sans-font);
   font-weight: 800;
   font-size: 1.25rem;
