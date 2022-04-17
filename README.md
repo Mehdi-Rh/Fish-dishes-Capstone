@@ -15,18 +15,12 @@
 
 ## Getting Started
 
+To get a local copy up and running follow these simple example steps.
+
 * Clone the repository: ```git clone git@github.com:Mehdi-Rh/Fish-dishes-Capstone.git```
 * ```npm i```
 * ```npm start```
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Setup
-
-* Clone the repository: git clone git@github.com:Mehdi-Rh/Fish-dishes-Capstone.git
-* npm i
-* npm start
 
 ## Authors
 
