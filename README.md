@@ -8,6 +8,11 @@
 
 - HTML, CSS and Vanilla Javascript
 
+## Live Demo
+
+[Link demo link](https://mehdi-rh.github.io/Fish-dishes-Capstone/)
+
+
 ## Video Presentation
 
 [Video demo](https://www.loom.com/share/d94cb47c28e3407bb69af558e4d8fec6)
