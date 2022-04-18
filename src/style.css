@@ -1,9 +1,9 @@
-/* 
+/*
 Mediterranean Blue – #027EBC
 Caribbean Sea – #7BCEF6
 Cool Water – #D4EEFB
 Orange Bolt – #FE2601
-Sun Glow – #FED032 
+Sun Glow – #FED032
 */
 
 * {
@@ -15,13 +15,12 @@ Sun Glow – #FED032
 body {
   --dark: #043f5c;
   --midd: #027ebc;
-  --red: #FE2601;
-  --yell: #FED032;
+  --red: #fe2601;
+  --yell: #fed032;
 
   background: white;
   color: white;
   overflow-x: hidden;
-
 }
 
 /* ******** HEADER ******** */
@@ -36,7 +35,6 @@ header {
   z-index: 2;
   background: var(--dark);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .navbar {
@@ -98,7 +96,6 @@ main {
   text-align: center;
   background-color: var(--dark);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .column img {
