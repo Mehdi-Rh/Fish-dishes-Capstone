@@ -23,8 +23,8 @@ export default async function displayItems(mealContainer, url, urlLike) {
           <span id="${element.idMeal}"><i class="fas fa-heart"></i></span>
           <p class="like">${likeNumber || 0} Likes</p>
         </div>
+        <button class="btnComments" type="button">Comment</button>
       </div>
-      <button class="comments" type="button">Comment</button>
     </div>
   `;
   });
