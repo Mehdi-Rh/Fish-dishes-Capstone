@@ -7,7 +7,6 @@ Sun Glow – #FED032
 */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -90,12 +89,13 @@ main {
 .column {
   float: left;
   box-sizing: border-box;
-  width: 33%;
+  width: 18%;
   padding: 10px;
-  margin: 5%;
+  margin: 1%;
   text-align: center;
   background-color: var(--dark);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: max-content;
 }
 
 .column img {
@@ -105,8 +105,8 @@ main {
 /* Remove extra left and right margins, due to padding in columns */
 .row {
   padding: 10px;
-  margin: 0 10%;
-  margin-bottom: 11rem;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 /* Clear floats after the columns */
@@ -114,19 +114,6 @@ main {
   content: "";
   display: table;
   clear: both;
-}
-
-.reservationBtn,
-.comments {
-  user-select: none;
-  cursor: pointer;
-  width: 100px;
-  height: 25px;
-  border-radius: 30px;
-}
-
-.fa-heart {
-  color: var(--red);
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
@@ -141,6 +128,37 @@ main {
 .containerCard {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerCard > * {
+  padding: 0.5rem;
+}
+
+.meal-title {
+  font-size: larger;
+}
+
+.likeContainer {
+  display: flex;
+  padding: 0;
+}
+
+.likeContainer > * {
+  padding: 0.5rem;
+}
+
+.fa-heart {
+  color: var(--yell);
+}
+
+.btnComments {
+  user-select: none;
+  cursor: pointer;
+  width: 100px;
+  color: var(--dark);
+  font-weight: 900;
 }
 
 /* footer */
@@ -148,6 +166,7 @@ footer {
   display: block;
   padding: 3rem 2rem;
   background-color: var(--dark);
+  width: 100%;
 }
 
 footer .wrapper.wrapper {
@@ -164,5 +183,5 @@ footer .branding {
   font-size: 1.25rem;
   line-height: 1em;
   flex-shrink: 0;
-  flex-basis: 7rem;
+  flex-basis: 12rem;
 }
