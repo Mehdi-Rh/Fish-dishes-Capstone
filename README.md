@@ -1,4 +1,4 @@
-# Fish-dishes-Capstone
+# Fish Dishes
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
