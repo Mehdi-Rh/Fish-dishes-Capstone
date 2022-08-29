@@ -1,5 +1,7 @@
 # Fish Dishes
 
+This is a web application that displays only fish dishes available on the “themealdb” API and displays them into cards with the option of commenting on it.
+
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ![screenshot](./delicious-meal.png)
